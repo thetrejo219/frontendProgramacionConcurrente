@@ -2,14 +2,14 @@ import { useEffect, useState } from 'react';
 import io from 'socket.io-client';
 import axios from 'axios';
 
-const socket = io('http://localhost:7650');
+const socket = io('https://backendprogramacionconcurrente.onrender.com');
 
 function App() {
   const [nickname, setNickname] = useState('');
   const [message, setMessage] = useState('');
   const [disable, setDisable] = useState(false);
   const [messages, setMessages] = useState<{ body: string; from: string }[]>([]);
-  const url = 'http://localhost:7650/api/';
+  const url = 'https://backendprogramacionconcurrente.onrender.com/api/';
 
   const [storedMessages, setStoredMessages] = useState<{ message: string; from: string }[]>([]);
   const [firstTime, setFirstTime] = useState(false);
